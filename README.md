@@ -37,5 +37,30 @@ Posicionarse en la raiz del projecto (pre_entrega3)
 ```bash
 git init
 ```
+- Para pasar al stage 
+(pasa todo)
 
+```bash
+git add .
+```
+o ir al control del cogigo y pasarlo ahi.
 
+- Buena practica colocar mensaje orientador y separar commits por tema, no mezclar
+
+- Para hacer un commit
+
+```bash
+git commit -m "mensaje"
+```
+o desde control de codigo.
+
+- Para ver todos los commits
+
+```bash
+git log
+```
+o para verlo mas corto
+
+```bash
+git log --oneline
+```
