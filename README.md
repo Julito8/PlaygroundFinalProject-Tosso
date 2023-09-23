@@ -15,7 +15,7 @@ python -m venv .venv
 - Crear un archivo `README.md` para anotar todo el proyecto
 - Posicionarse en project
 
-## Instalar django
+## Instalar django // requirements
 
 ```bash
 pip install django
@@ -63,4 +63,62 @@ o para verlo mas corto
 
 ```bash
 git log --oneline
+```
+
+## Para subir a git
+
+- Tocar en control de codigo o
+```bash
+git push
+```
+
+## Para bajar de git
+
+- Copiar la URL y utilizar en una carpeta en terminal
+
+```bash
+git clone URL
+```
+
+## Agregar los paquetes que se necesitan para este proyecto
+
+```bash
+pip freeze >> requirements .txt
+```
+
+- Al clonar se debe instalar
+
+```bash
+pip install -r requirements.txt 
+```
+
+
+## DJANGO
+
+- Crear una carpeta views.py dentro de config
+
+```bash
+ni views.py 
+```
+e impotamos 
+
+```bash
+from django.http import HttpResponse
+```
+
+- Creamos una funcion
+
+```bash
+def saludo(request):
+    return HttpResponse("Hola desde Django")
+```
+- En urls.py importar todo el paquete
+
+```bash
+from . import views
+```
+Crear un path para esa funcion
+
+```bash
+path('saludo/', views.saludo)
 ```
