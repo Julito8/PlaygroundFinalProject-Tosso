@@ -132,8 +132,42 @@ Al inicia se crea la rama master. Buena practica crear otra branch para hacer ca
 ```bash
 git branch
 ```
-
+## git
 - Para traer un commit
 ```bash
 git pull
+```
+
+## APLICACIONES
+
+- Dentro de project
+
+```bash
+django-admin startapp nombre
+```
+Luego ir a config, settings.py y agregar el nombre de la app a INSTALLED_APPS
+
+- Dentro de la app crear un archivo urls.py
+Donde van a crearse las urls dentro de la app
+Creaciones que se hacen en views.py de la app
+
+- Avisar a urls.py de project sobre las urls de las apps:
+En urls.py de project
+
+```bash
+from django.urls import path, include
+urlpatterns += [
+    path("", include(prueba.urls))
+]
+```
+## Templates
+
+- Crear una carpeta templates en la app y dentro de esta una carpeta llamada como la app. Dentro de la ultima crear un archivo index.html
+
+dentro de index.html poner ! y apretar Tab. Armar la pagina.
+
+- Crear una funcion
+```bash
+def index(request):
+    return render(request, "prueba/index.html")
 ```
