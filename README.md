@@ -122,3 +122,18 @@ Crear un path para esa funcion
 ```bash
 path('saludo/', views.saludo)
 ```
+
+## Ramas o Branch
+
+Al inicia se crea la rama master. Buena practica crear otra branch para hacer cambios, luego unirla a la rama principal
+
+- Para motrar las ramas
+
+```bash
+git branch
+```
+
+- Para traer un commit
+```bash
+git pull
+```
