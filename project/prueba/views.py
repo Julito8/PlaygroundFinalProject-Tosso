@@ -4,4 +4,5 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def index(request):
-    return render(request, "prueba/index.html")
+    contexto = {"nombre": "Juli"}
+    return render(request, "prueba/index.html", contexto)
