@@ -166,8 +166,29 @@ urlpatterns += [
 
 dentro de index.html poner ! y apretar Tab. Armar la pagina.
 
-- Crear una funcion
+- Crear una funcion con render y dirigirlo "nombre de la app"/"archivo"
+
 ```bash
 def index(request):
     return render(request, "prueba/index.html")
 ```
+
+- Podemos enviar valores a traves de contexto (diccionarios)
+
+```bash
+def index(request):
+    contexto = {"nombre": "Juli"}
+    return render(request, "prueba/index.html", contexto)
+```
+y en index.htlm
+
+```bash
+    <h1> {{ nombre }} </h1>
+    <p>es un template</p>
+```
+
+## nombrar la aplicacion
+
+en urls.py agregar
+
+app_name = "nombre_de_la_app
