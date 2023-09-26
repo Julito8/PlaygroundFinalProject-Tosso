@@ -151,7 +151,7 @@ django-admin startapp nombre
 ```
 Luego ir a config, settings.py y agregar el nombre de la app a INSTALLED_APPS
 
-- Dentro de la app crear un archivo urls.py
+- Dentro de la app crear(o copiar) un archivo urls.py
 Donde van a crearse las urls dentro de la app
 Creaciones que se hacen en views.py de la app
 
@@ -164,6 +164,7 @@ urlpatterns += [
     path("", include(prueba.urls))
 ]
 ```
+- Agregar templates(abajo)
 ## Templates
 
 - Crear una carpeta templates en la app y dentro de esta una carpeta llamada como la app. Dentro de la ultima crear un archivo index.html
@@ -196,3 +197,39 @@ y en index.htlm
 en urls.py agregar
 
 app_name = "nombre_de_la_app
+
+## MODELOS
+
+- En models.py crear clases y utilizar models.
+ejemplo
+```bash
+class Pais(models.Model):
+    nombre = models.CharField(max_length=100) #Charfield es que es un str, y el max_length es obligatorio
+
+    def __str__(self) -> str:
+        return self.nombre
+```
+- Para crearlo 
+```bash
+python manage.py makemigrations
+```
+En migrations se crea el modelo 0001.initial.py
+
+## BASE DE DATOS
+
+- Para crear una base de datos
+
+```bash
+python manage.py migrate
+```
+En migrations se crea el modelo 0001.initial.py
+
+ver en db.sqlite3 los modelos y la base de datos
+
+## Crear un superusuario
+
+- Para poder entrar a admin se necesita crear uno
+
+```bash
+python manage.py createsuperuser
+```

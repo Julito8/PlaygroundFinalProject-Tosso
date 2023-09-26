@@ -28,6 +28,4 @@ urlpatterns = [
 urlpatterns = [
     path("", include("prueba.urls")),
     path("", include("cliente.urls")),
-
-
 ]
