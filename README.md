@@ -260,4 +260,110 @@ Ahora se pueden agregar modelos de tipo clase a la base de datos desde el panel 
 - crear una aplicacion o home, sacarle el admin y models, copiarle un url y nombrarla en este archivo
 En este archivo va a conetner un solo html central. base.html que contiene bloques y extenderlos en los otros html
 
+base.html :
+```bash
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caja de pandora</title>
+</head>
+<body>
+    
+    <h1> Caja de pandora </h1>
+    {% block title %}
+    {% endblock title %}
 
+    {% block content %}
+    {% endblock content %}
+
+
+</body>
+</html>
+```
+
+y para usarlo en otra parte
+por ej index.hmtl
+
+```bash
+{% extends 'home/base.html' %}
+   
+{% block title %}
+    <h2> Home </h2>
+{% endblock title %}
+
+{% block content %}
+    <p> <a href="{% url 'cliente:index' %}">Clientes</a> </p>
+    <p> <a href="{% url 'home:about' %}">About</a> </p> 
+{% endblock content %}
+
+```
+
+## PLANTILLAS
+
+- Crear un archiv forms.py en la app ( cliente)
+```bash
+
+from django import forms
+from . import models
+
+class ClienteForm(forms.ModelForm): #Una fora de crear formularios
+    class Meta: #sub clase q permite ponerle nombre etc
+        model = models.Cliente 
+        fields = ["nombre", "apellido", "nacimiento", "pais_origen_id"]
+```
+
+- Crear una funcion en views importando el formiulario
+
+```bash
+from . import forms
+from django.shortcuts import render, redirect
+
+def crear(request):
+    if request.method == "POST":
+        form = forms.ClienteForm(request.POST) #Formulario lleno    
+        if form.is_valid():
+            form.save()   # guarda los datos
+            return redirect("cliente:index")
+        
+    else
+        form = forms.ClienteForm()  #Formulario vacio
+    return render(request, "cliente/crear.html", {"form":form})
+
+```
+
+- Crear un html en cliente/templates llamado crear.html
+
+```bash
+{% extends 'home/base.html' %}
+
+{% block title %}
+    <h2>Crear cliente</h2>
+{% endblock title %}
+
+{% block content %}
+    
+    <form action="" method="post">
+        {% csrf_token %}  #proteccion
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+
+    <p><a href="{% url 'home:index' %}">Ir al incio</a></p>
+
+{% endblock content %}
+```
+
+- Agregar el path al url de la app
+```bash
+urlpatterns = [
+    path("", views.index, name="index"),
+    path("crear/", views.crear, name="crear"),
+]
+```
+## TEMAS
+
+- Crear una carpeta en home static con otra carpeta home
+
+- ir a bootstrap y descargar un tema, extraerlo y arrastrar las 3 carpteas (assets, css, js) dentro de home/static/home y el index.html, renombralo y arrastrarlo en templates de home
