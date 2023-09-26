@@ -367,3 +367,105 @@ urlpatterns = [
 - Crear una carpeta en home static con otra carpeta home
 
 - ir a bootstrap y descargar un tema, extraerlo y arrastrar las 3 carpteas (assets, css, js) dentro de home/static/home y el index.html, renombralo y arrastrarlo en templates de home
+
+- Ir a urls.py dentro de home e importar 
+```bash
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+```
+Luego agregar
+```bash
+urlpatterns += staticfiles_urlpatterns()
+```
+
+- cambiar el nombre de nuestro index.html por otro y el archivo bajado de bootstrap ponerle index.html
+
+en index.html:
+ponerlo en español y
+```bash
+{% load static %}
+
+        <title>La caja de Pandora</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{% static 'home/asstes/favicon.ico' %}" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'home/css/styles.css' %}" rel="stylesheet" />
+```
+- Cambia index.html por base.html y base.html por otro nombre(base2.html)
+e index_viejo.html lo vuelve a index.html
+borra base2.html
+
+- En base.html encierra con bloques creados en index.html de esta manera
+
+```bash
+        <!-- Page Content-->
+        <div class="container px-4 px-lg-5">
+            {% block title %}
+                
+            {% endblock title %}
+            <!-- Heading Row-->
+            <div class="row gx-4 gx-lg-5 align-items-center my-5">
+                <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://dummyimage.com/900x400/dee2e6/6c757d.jpg" alt="..." /></div>
+                <div class="col-lg-5">
+                    <h1 class="font-weight-light">Business Name or Tagline</h1>
+                    <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
+                    <a class="btn btn-primary" href="#!">Call to Action!</a>
+                </div>
+            </div>
+            {% block content %}
+             <!-- Call to Action-->
+                    <div class="card text-white bg-secondary my-5 py-4 text-center">
+                        <div class="card-body"><p class="text-white m-0">This call to action card is a great place to showcase some important information or display a clever tagline!</p></div>
+                    </div>
+                    <!-- Content Row-->
+                    <div class="row gx-4 gx-lg-5">
+                        <div class="col-md-4 mb-5">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h2 class="card-title">Card One</h2>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+                                </div>
+                                <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-5">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h2 class="card-title">Card Two</h2>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.</p>
+                                </div>
+                                <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-5">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h2 class="card-title">Card Three</h2>
+                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+                                </div>
+                                <div class="card-footer"><a class="btn btn-primary btn-sm" href="#!">More Info</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer-->
+                <footer class="py-5 bg-dark">
+                    <div class="container px-4 px-lg-5"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
+                </footer>
+            {% endblock content %}
+```
+
+-Para agregar imagenes, ubico la imagen en static creando una caprta llamada imagenes, de ahi la ubico
+
+```bash
+            <!-- Heading Row-->
+            <div class="row gx-4 gx-lg-5 align-items-center my-5">
+                <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'home/imagenes/caja.jpg' %}" alt="..." /></div>
+```
+
+- Saca codigo lo guarda en otro archivo html y luego lo llama
+
+```bash 
+        <nav>
+            {% include 'home/navbar.html' %}
+        </nav>
+```
