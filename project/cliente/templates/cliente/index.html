@@ -7,8 +7,16 @@
 </head>
 <body>
     
-    <h1> {{ nombre }} </h1>
-    <p>es un template</p>
+    <h1> Coderhouse </h1>
+    
+    <ul>
+    {% for cliente in clientes %}
+        <li> {{cliente.nombre}} </li>
+        <li> {{cliente.apellido}} </li>
+    {% endfor %}
+    </ul>
+    <p> {{cliente.nombre}} </p>
+
 
 </body>
 </html>
