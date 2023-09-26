@@ -132,6 +132,10 @@ Al inicia se crea la rama master. Buena practica crear otra branch para hacer ca
 ```bash
 git branch
 ```
+- Para crear 
+```bash
+git branch nombre
+```
 ## git
 - Para traer un commit
 ```bash
