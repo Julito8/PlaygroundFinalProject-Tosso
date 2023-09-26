@@ -253,3 +253,11 @@ from . import models
 admin.site.register(models.modelo_creado)
 ```
 Ahora se pueden agregar modelos de tipo clase a la base de datos desde el panel de usuario de admin
+
+
+## aplicacion home
+
+- crear una aplicacion o home, sacarle el admin y models, copiarle un url y nombrarla en este archivo
+En este archivo va a conetner un solo html central. base.html que contiene bloques y extenderlos en los otros html
+
+
