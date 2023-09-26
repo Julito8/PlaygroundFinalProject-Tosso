@@ -7,6 +7,8 @@
 ```bash
 python -m venv .venv
 ```
+lo activas cerrando y volviendo abrir la terminal o
+.venv\Scripts\activate
 
 ##  Crear la estructura del proyecto
 
@@ -20,6 +22,10 @@ python -m venv .venv
 ```bash
 pip install django
 ```
+```bash
+pip install -r requirements.txt
+```
+
 ## Crear el proyecto Django y ejecutar el servidor Django
 
 ```bash
@@ -233,3 +239,17 @@ ver en db.sqlite3 los modelos y la base de datos
 ```bash
 python manage.py createsuperuser
 ```
+
+## Panel de usuario en admin
+
+- Agregar el modelo creado al panel
+en modelo_creado/admin.py
+1. importas el modelo 
+```bash
+from . import models
+```
+2. pones
+```bash
+admin.site.register(models.modelo_creado)
+```
+Ahora se pueden agregar modelos de tipo clase a la base de datos desde el panel de usuario de admin

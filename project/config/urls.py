@@ -25,7 +25,7 @@ urlpatterns = [
     path('dado/', views.tirar_dado),
 ]
 
-urlpatterns = [
-    path("", include("prueba.urls")),
-    path("", include("cliente.urls")),
+urlpatterns += [
+      path("cliente/", include("cliente.urls"))
 ]
+
