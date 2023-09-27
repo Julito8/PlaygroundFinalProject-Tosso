@@ -192,3 +192,6 @@ y en index.htlm
 en urls.py agregar
 
 app_name = "nombre_de_la_app
+
+
+actualizar
