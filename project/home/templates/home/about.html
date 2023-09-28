@@ -1,11 +1,11 @@
 {% extends 'home/base.html' %}
 
 {% block title %}
-    <h2> Acerca de mi</h2>
+    <h2> Mira todos los blogs</h2>
 {% endblock title %}
 
 {% block content %}
-    <p> Hola esto es about!</p>
+    <p> Todavia no creaste el tuyo? <a href="{% url 'cliente:crear_blog' %}">Empieza aqui</a></p>
     <p><a href="{% url 'home:index' %}">Ir atras</a><p>    
 {% endblock content %}
 

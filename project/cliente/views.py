@@ -6,20 +6,9 @@ from . import models
 from . import forms
 
 def index(request):
-    clientes = models.Cliente.objects.all()
+    perfiles = models.Perfil.objects.all()
 
-    return render(request, "cliente/index.html", {"clientes":clientes})
-
-def crear(request):
-    if request.method == "POST":
-        form = forms.ClienteForm(request.POST) #Formulario lleno    
-        if form.is_valid():
-            form.save()   # guarda los datos
-            return redirect("cliente:index")
-    else:
-        form = forms.ClienteForm()  #Formulario vacio
-    return render(request, "cliente/crear.html", {"form":form})
-
+    return render(request, "cliente/perfil.html", {"perfiles":perfiles})
 
 
 def perfil(request):
@@ -57,6 +46,8 @@ def crear_blog(request):
         form = forms.BlogForm()  #Formulario vacio
     return render(request, "cliente/crear_blog.html", {"form":form})
 
+def mostrar_blogs(request):
+    blogs = models.Blog.objects.all()
 
-def iniciar_sesion(request):
-    return
+    return render(request, "cliente/index.html", {"blogs":blogs})
+
