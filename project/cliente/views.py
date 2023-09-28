@@ -5,14 +5,11 @@ from django.http import HttpResponse
 from . import models
 from . import forms
 
-def index(request):
+def perfil(request):
     perfiles = models.Perfil.objects.all()
 
     return render(request, "cliente/perfil.html", {"perfiles":perfiles})
 
-
-def perfil(request):
-    return 
 
 def crear_perfil(request):
     if request.method == "POST":
