@@ -167,7 +167,7 @@ En urls.py de project
 ```bash
 from django.urls import path, include
 urlpatterns += [
-    path("", include(prueba.urls))
+    path("", include("prueba.urls"))
 ]
 ```
 - Agregar templates(abajo)
@@ -219,7 +219,7 @@ class Pais(models.Model):
 ```bash
 python manage.py makemigrations
 ```
-En migrations se crea el modelo 0001.initial.py
+
 
 ## BASE DE DATOS
 
