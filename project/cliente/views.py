@@ -19,3 +19,24 @@ def crear(request):
     else:
         form = forms.ClienteForm()  #Formulario vacio
     return render(request, "cliente/crear.html", {"form":form})
+
+
+
+def perfil(request):
+    return 
+
+def crear_perfil(request):
+    if request.method == "POST":
+        form = forms.PerfilForm(request.POST) #Formulario lleno    
+        if form.is_valid():
+            form.save()   # guarda los datos
+            return redirect("cliente:index")
+    else:
+        form = forms.ClienteForm()  #Formulario vacio
+    return render(request, "cliente/crear.html", {"form":form})
+
+def crear_blog(request):
+    return
+
+def iniciar_sesion(request):
+    return

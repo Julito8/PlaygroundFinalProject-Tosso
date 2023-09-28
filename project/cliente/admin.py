@@ -5,4 +5,7 @@ from . import models
 
 admin.site.register(models.Pais)
 admin.site.register(models.Cliente)
+admin.site.register(models.Blog)
+admin.site.register(models.Perfil)
+admin.site.register(models.Usuario)
 

@@ -5,3 +5,9 @@ class ClienteForm(forms.ModelForm):
     class Meta:
         model = models.Cliente
         fields = ["nombre", "apellido", "nacimiento", "pais_origen_id"]
+
+
+class PerfilForm(forms.ModelForm):
+    class Meta:
+        model = models.Perfil
+        fields = ["nombre", "apellido", "nacimiento", "mail", "usuario"]
