@@ -11,3 +11,8 @@ class PerfilForm(forms.ModelForm):
     class Meta:
         model = models.Perfil
         fields = ["nombre", "apellido", "nacimiento", "mail", "usuario"]
+
+class UsuarioForm(forms.ModelForm):
+    class Meta:
+        model = models.Usuario
+        fields = ["usuario", "contraseña"]
