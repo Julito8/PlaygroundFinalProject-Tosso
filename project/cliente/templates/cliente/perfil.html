@@ -5,12 +5,13 @@
 {% endblock title %}    
 
 {% block content %}
+    <h2>Perfiles registrados:</h2>
     <ul>
         {% for perfil in perfiles %}
             <p>Nombre de usuario: {{perfil.usuario}}</p>
         {% endfor %}
     </ul>
 
-    <button><a href="{% url 'cliente:crear_perfil' %}">Crea o edita tu perfil</a></button>
+    <button><a href="{% url 'cliente:crear_perfil' %}">Crea tu perfil</a></button>
     <a href="{% url 'home:index' %}">Volver a inicio</a>
 {% endblock content %}
