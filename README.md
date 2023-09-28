@@ -204,6 +204,9 @@ en urls.py agregar
 
 app_name = "nombre_de_la_app
 
+
+actualizar
+
 ## MODELOS
 
 - En models.py crear clases y utilizar models.
