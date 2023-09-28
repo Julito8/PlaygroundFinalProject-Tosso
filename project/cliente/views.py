@@ -48,7 +48,15 @@ def crear_usuario(request):
 
 
 def crear_blog(request):
-    return
+    if request.method == "POST":
+        form = forms.BlogForm(request.POST) #Formulario lleno    
+        if form.is_valid():
+            form.save()   # guarda los datos
+            return redirect("cliente:index")
+    else:
+        form = forms.BlogForm()  #Formulario vacio
+    return render(request, "cliente/crear_blog.html", {"form":form})
+
 
 def iniciar_sesion(request):
     return

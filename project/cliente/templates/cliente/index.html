@@ -1,16 +1,13 @@
 {% extends 'home/base.html' %}
 {% block title %}
-    <h2>Clientes</h2>
+    <h2>Tu perfil</h2>
 {% endblock title %}
 
 {% block content %}
-    <ul>
-        {% for cliente in clientes %}
-            <li> {{cliente.nombre}} {{cliente.apellido}} </li>
-        {% endfor %}
-    </ul>
+
+    <p><a href="{% url 'cliente:crear_usuario' %}">Crear usuario</a></p> 
+    <p><a href="{% url 'cliente:crear_perfil' %}">Edita tu perfil</a></p>
     <a href="{% url 'home:index' %}">Ir al menu</a> 
-    <p><a href="{% url 'cliente:crear_perfil' %}">Crear Perfil</a></p> 
     
 {% endblock content %}
 

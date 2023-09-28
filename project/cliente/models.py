@@ -17,12 +17,15 @@ class Cliente(models.Model):
         return f"{self.nombre} {self.apellido}" 
     
 
+
+
+
+
 class Usuario(models.Model):
     usuario = models.CharField(max_length=100)
-    contraseña = models.CharField(max_length=100)
 
     def __str__(self) -> str:
-        return f"{self.usuario} {self.contraseña}" 
+        return f"{self.usuario}" 
     
 class Perfil(models.Model):
     nombre = models.CharField(max_length=100)
@@ -37,6 +40,7 @@ class Perfil(models.Model):
 class Blog(models.Model):
     titulo = models.CharField(max_length=100)
     contenido = models.CharField(max_length=10000)
+    usuario_origen_id = models.ForeignKey(Perfil, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self) -> str:
         return f"{self.titulo}"
