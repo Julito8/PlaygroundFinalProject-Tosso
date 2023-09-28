@@ -49,5 +49,5 @@ def crear_blog(request):
 def mostrar_blogs(request):
     blogs = models.Blog.objects.all()
 
-    return render(request, "cliente/index.html", {"blogs":blogs})
+    return render(request, "cliente/mostrar_blogs.html", {"blogs":blogs})
 

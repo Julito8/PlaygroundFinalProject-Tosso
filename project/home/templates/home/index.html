@@ -5,8 +5,8 @@
 {% endblock title %}
 
 {% block content %}
-    <p> <a href="{% url 'cliente:index' %}">Tu perfil</a> </p>
-    <p> <a href="{% url 'home:about' %}">About</a> </p> 
+<p> <a href="{% url 'cliente:index' %}">Tu perfil</a> </p>
+<p> <a href="{% url 'cliente:mostrar_blogs' %}">Blogs</a> </p> 
     <p> <a href="{% url 'cliente:crear_blog' %}">Crea tu blog</a> </p> 
     <p> <a href="{% url 'cliente:crear_usuario' %}">Crea un usuario</a> </p> 
 {% endblock content %}
