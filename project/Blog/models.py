@@ -6,7 +6,7 @@ from django.utils import timezone
 
 class BlogCategoria(models.Model):
     nombre = models.CharField(max_length=50)
-    descripcion = models.CharField(max_length=200, null=True, blank=True, verbose_name="descripción")
+    descripcion = models.CharField(max_length=1000, null=True, blank=True, verbose_name="descripción")
 
     class Meta:
         verbose_name = "categoria de blogs"

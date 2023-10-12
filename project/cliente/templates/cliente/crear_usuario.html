@@ -1,17 +1,19 @@
 {% extends 'home/base.html' %}
 
 {% block title %}
-    <h2>Crea tu usuario</h2>
+    <h1>Crea tu usuario</h1>
 {% endblock title %}
 
 {% block content %}
     <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Guardar</button>
+        <button type="submit" class="btn btn-dark">Guardar</button>
     </form>
-
-    <p><a href="{% url 'cliente:perfil' %}">Volver a Perfil</a></p>
-    <p><a href="{% url 'home:index' %}">Ir a la pagina principal</a></p>
+    <p> </p>
+    <p> </p>
+    <p><a href="{% url 'cliente:perfil' %}"class="btn btn-dark">Volver a Perfil</a></p>
+    <p>  </p>
+    <p><a href="{% url 'home:index' %}"class="btn btn-dark">Ir a la pagina principal</a></p>
 {% endblock content %}
 

@@ -5,13 +5,13 @@
 {% endblock title %}    
 
 {% block content %}
-    <h2>Perfiles registrados:</h2>
-    <ul>
+    <h3>Registrados:</h3>
+    <ol>
         {% for perfil in perfiles %}
-            <p>Nombre de usuario: {{perfil.usuario}}</p>
+            <li><strong>Nombre de usuario:</strong> {{perfil.usuario}}</li>
         {% endfor %}
-    </ul>
+    </ol>
 
-    <button><a href="{% url 'cliente:crear_perfil' %}">Crea tu perfil</a></button>
-    <a href="{% url 'home:index' %}">Volver a inicio</a>
+    <a href="{% url 'cliente:crear_perfil' %}" class="btn btn-dark">Crea tu perfil</a>
+    <a href="{% url 'home:index' %}" class="btn btn-dark">Volver a inicio</a>
 {% endblock content %}

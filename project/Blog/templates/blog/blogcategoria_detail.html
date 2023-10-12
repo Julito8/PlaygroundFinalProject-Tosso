@@ -1,5 +1,9 @@
 {% extends 'Blog/base.html' %}
 
+{% block title %}
+    <h2>Detalles de la categoría <strong>{{ object.nombre}}</strong> </h2>
+{% endblock title %}
+
 {% block blog %}
     
         <ul>
@@ -8,5 +12,5 @@
         </ul>
     
 
-    <a href="{% url 'blog:index' %}" class="btn btn-dark">Volver a atras</a>
+    <a href="{% url 'blog:blogcategoria_list' %}" class="btn btn-dark">Volver a atras</a>
 {% endblock blog %}

@@ -1,19 +1,25 @@
 {% extends 'Blog/base.html' %}
 
+
+{% block title %}
+    <h1>Listado de categorias</h1>
+{% endblock title %}
+
 {% block blog %}
     
     {% for blog in object_list %}
         <ul>
 
             <li> {{ blog.nombre}} </li>
-                <a href="{% url 'blog:blogcategoria_detail' blog.id %}">Ver detalle</a>
-                <a href="">Actualizar</a>
-                <a href="">Eliminar</a>
+                <a href="{% url 'blog:blogcategoria_detail' blog.id %}"class="btn btn-light">Ver detalle</a>
+                <a href="{% url 'blog:blogcategoria_update' blog.id %}"class="btn btn-light">Actualizar</a>
+                <a href="{% url 'blog:blogcategoria_delete' blog.id %}" class="btn btn-danger">Eliminar</a>
 
         </ul>
         
     {% endfor %}
 
+    <a href="{% url 'blog:blogcategoria_create' %}" class="btn btn-success ">Crear Categoria</a>
     <a href="{% url 'blog:index' %}" class="btn btn-dark">Volver a atras</a>
 {% endblock blog %}
 
