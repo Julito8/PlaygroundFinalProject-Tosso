@@ -6,14 +6,22 @@
 {% endblock title %}
 
 {% block blog %}
+
+    <div class="py-4 ">
+
+        <form action="" method="get">
+            <input type="text" name="buscar" placeholder="Buscar Categoría">
+        </form>
+
+    </div>
     
-    {% for blog in object_list %}
+    {% for categoria in object_list %}
         <ul>
 
-            <li> {{ blog.nombre}} </li>
-                <a href="{% url 'blog:blogcategoria_detail' blog.id %}"class="btn btn-light">Ver detalle</a>
-                <a href="{% url 'blog:blogcategoria_update' blog.id %}"class="btn btn-light">Actualizar</a>
-                <a href="{% url 'blog:blogcategoria_delete' blog.id %}" class="btn btn-danger">Eliminar</a>
+            <li> {{ categoria.nombre}} </li>
+                <a href="{% url 'blog:blogcategoria_detail' categoria.id %}"class="btn btn-light">Ver detalle</a>
+                <a href="{% url 'blog:blogcategoria_update' categoria.id %}"class="btn btn-light">Actualizar</a>
+                <a href="{% url 'blog:blogcategoria_delete' categoria.id %}" class="btn btn-danger">Eliminar</a>
 
         </ul>
         

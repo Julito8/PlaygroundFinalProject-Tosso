@@ -1,0 +1,30 @@
+{% extends 'Blog/base.html' %}
+
+
+{% block title %}
+    <h1>Listado de Blogs</h1>
+{% endblock title %}
+
+{% block blog %}
+
+    <div class="py-4 ">
+
+        <form action="" method="get">
+            <input type="text" name="buscar" placeholder="Buscar Blog">
+        </form>
+
+    </div>
+
+    {% for blog in object_list %}
+        <ul>
+
+            <li> <strong class ="text-primary">{{ blog.titulo}}:</strong> {{blog.descripcion_corta}}</li>
+                <a href="{% url 'blog:blog_detail' blog.id %}"class="btn btn-light">Ver detalle</a>
+
+        </ul>
+        
+    {% endfor %}
+
+    <a href="{% url 'blog:blog_create' %}" class="btn btn-success ">Crear Blog</a>
+    <a href="{% url 'blog:index' %}" class="btn btn-dark">Volver a atras</a>
+{% endblock blog %}

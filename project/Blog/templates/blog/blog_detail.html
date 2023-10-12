@@ -1,0 +1,19 @@
+{% extends 'Blog/base.html' %}
+
+{% block title %}
+    <h2>Detalles del blog <strong>{{ object.titulo}}</strong> </h2>
+{% endblock title %}
+
+{% block blog %}
+    
+        <ul>
+            <li><strong>Nombre:</strong> {{ object.nombre}}</li> 
+            <li><strong>Descripción:</strong> {{ object.descripcion_corta}} </li>
+            <li><strong>Categoria:</strong> {{ object.categoria}} </li>
+            <li><strong>Autoria:</strong> {{ object.usuario_origen_id}}</li>
+            <li><strong>Fecha de creación:</strong> {{ object.fecha_creacion}}</li>
+        </ul>
+    
+
+    <a href="{% url 'blog:blog_list' %}" class="btn btn-dark">Volver a atras</a>
+{% endblock blog %}

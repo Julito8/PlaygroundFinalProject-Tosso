@@ -10,3 +10,15 @@ class BlogCategoriaForm(forms.ModelForm):
             "nombre": forms.TextInput(attrs={"class": "form-control"}),
             "descripcion": forms.TextInput(attrs={"class": "form-control"}),
         }
+
+
+class BlogForm(forms.ModelForm):
+    class Meta:
+        model = models.Blog
+        fields = "__all__"
+
+        widgets= {
+            "titulo": forms.TextInput(attrs={"class": "form-control"}),
+            "descripcion_corta": forms.TextInput(attrs={"class": "form-control"}),
+            "contenido": forms.TextInput(attrs={"class": "form-control"}),
+        }

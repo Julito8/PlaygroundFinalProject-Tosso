@@ -16,3 +16,10 @@ urlpatterns = [
     path("blogcategoria/delete/<int:pk>", views.BlogCategoriaDelete.as_view(), name="blogcategoria_delete"), 
 
 ]
+
+urlpatterns += [
+    path("blog/list/", views.BlogList.as_view(), name="blog_list"),
+    path("blog/detail/<int:pk>", views.BlogDetail.as_view(), name="blog_detail"),
+    path("blog/create/", views.BlogCreate.as_view(), name="blog_create"),
+
+]
