@@ -1,0 +1,12 @@
+{% extends 'Blog/base.html' %}
+
+{% block blog %}
+    
+        <ul>
+            <li><strong>Nombre:</strong> {{ object.nombre}}</li> 
+            <li><strong>Descripción:</strong> {{ object.descripcion}} </li>
+        </ul>
+    
+
+    <a href="{% url 'blog:index' %}" class="btn btn-dark">Volver a atras</a>
+{% endblock blog %}

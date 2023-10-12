@@ -12,7 +12,7 @@ class UsuarioForm(forms.ModelForm):
         fields = ["usuario"]
 
 
-class BlogForm(forms.ModelForm):
+""" class BlogForm(forms.ModelForm):
     class Meta:
         model = models.Blog
-        fields = ["titulo", "contenido", "usuario_origen_id"]
+        fields = ["titulo", "contenido",] """

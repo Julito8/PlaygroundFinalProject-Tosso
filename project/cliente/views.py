@@ -33,7 +33,7 @@ def crear_usuario(request):
     return render(request, "cliente/crear_usuario.html", {"form":form})
 
 
-def crear_blog(request):
+""" def crear_blog(request):
     if request.method == "POST":
         form = forms.BlogForm(request.POST) #Formulario lleno    
         if form.is_valid():
@@ -47,4 +47,4 @@ def mostrar_blogs(request):
     blogs = models.Blog.objects.all()
 
     return render(request, "cliente/mostrar_blogs.html", {"blogs":blogs})
-
+ """

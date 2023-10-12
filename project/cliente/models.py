@@ -17,11 +17,10 @@ class Perfil(models.Model):
     def __str__(self) -> str:
         return f"{self.nombre} {self.apellido}" 
 
-class Blog(models.Model):
+""" class Blog(models.Model):
     titulo = models.CharField(max_length=100)
     contenido = models.CharField(max_length=10000)
-    usuario_origen_id = models.ForeignKey(Perfil, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self) -> str:
         return f"{self.titulo}"
-    
+     """

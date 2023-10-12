@@ -1,0 +1,19 @@
+{% extends 'Blog/base.html' %}
+
+{% block blog %}
+    
+    {% for blog in object_list %}
+        <ul>
+
+            <li> {{ blog.nombre}} </li>
+                <a href="{% url 'blog:blogcategoria_detail' blog.id %}">Ver detalle</a>
+                <a href="">Actualizar</a>
+                <a href="">Eliminar</a>
+
+        </ul>
+        
+    {% endfor %}
+
+    <a href="{% url 'blog:index' %}" class="btn btn-dark">Volver a atras</a>
+{% endblock blog %}
+
