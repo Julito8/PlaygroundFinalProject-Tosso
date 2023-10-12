@@ -21,5 +21,7 @@ urlpatterns += [
     path("blog/list/", views.BlogList.as_view(), name="blog_list"),
     path("blog/detail/<int:pk>", views.BlogDetail.as_view(), name="blog_detail"),
     path("blog/create/", views.BlogCreate.as_view(), name="blog_create"),
+    path("blog/update/<int:pk>", views.BlogUpdate.as_view(), name="blog_update"),
+    path("blog/delete/<int:pk>", views.BlogDelete.as_view(), name="blog_delete"),
 
 ]

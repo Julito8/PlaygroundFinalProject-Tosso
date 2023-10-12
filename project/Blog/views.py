@@ -58,3 +58,12 @@ class BlogCreate(CreateView):
     model = models.Blog
     form_class = forms.BlogForm
     success_url = reverse_lazy("blog:blog_list")
+
+class BlogUpdate(UpdateView):
+    model = models.Blog
+    form_class = forms.BlogForm
+    success_url = reverse_lazy("blog:blog_list")
+
+class BlogDelete(DeleteView):
+    model = models.Blog
+    success_url = reverse_lazy("blog:blog_list")
