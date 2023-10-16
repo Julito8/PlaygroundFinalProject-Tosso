@@ -5,8 +5,8 @@
 {% endblock title %}
 
 {% block blog %}
-    <h3> <a href="{% url 'blog:blogcategoria_list' %}">Categorias de Blogs</a></h3> 
-    <h3> <a href="{% url 'blog:blog_list' %}">Blogs</a></h3> 
+    <h4><p class="fs-5 fst-italic"> Categorias de blogs. </p></h4><button  class="btn btn-light "><a href="{% url 'blog:blogcategoria_list' %}">Ir</a></button>
+    <h4><p class="fs-5 fst-italic"> Listado de blogs. </p></h4><button  class="btn btn-light "> <a href="{% url 'blog:blog_list' %}">Ir</a></button>
 
 
 {% endblock blog %}

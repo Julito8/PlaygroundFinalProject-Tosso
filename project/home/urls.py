@@ -11,9 +11,10 @@ app_name= "home"
 urlpatterns = [
     path("", views.index, name="index"),
     path("about/", views.about, name="about"),
-    path("login/", views.loginrequest, name="login"),
     path("login/", LogoutView.as_view(template_name="home/logout.html"), name="login"),
 
 ]
 
 urlpatterns += staticfiles_urlpatterns()
+
+"""     path("login/", views.loginrequest, name="login"), """

@@ -6,8 +6,7 @@
 
 {% block blog %}
     
-    <p class=" fs-5 fst-italic ">¿Estas seguro de que quieres eliminar el blog {{ object.titulo
-        }}?</p>
+    <p class=" fs-5 fst-italic ">¿Estas seguro de que quieres eliminar el blog {{ object.titulo }}?</p>
     <form action="" method="post">
         {% csrf_token %}
         <div class="d-grid gap-3">

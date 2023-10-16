@@ -13,7 +13,9 @@ def index(request):
 def about(request):
     return render(request, "home/about.html")
 
-def loginrequest(request):
+
+
+""" def loginrequest(request):
     form = forms.CustomAuthenticationForm(request, data=request.POST)
     if form.is_valid():
         usuario = form.cleaned_data.get("username")
@@ -24,4 +26,4 @@ def loginrequest(request):
             return render(request, "home/index.html", {"form": form})
     else:
         form = AuthenticationForm()
-    return render(request, "home/login.html", {"form": form})
+    return render(request, "home/login.html", {"form": form}) """

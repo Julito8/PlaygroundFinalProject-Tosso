@@ -8,7 +8,6 @@ from django.urls import reverse_lazy
 from .models import Blog
 
 # Create your views here.
-
 class BlogCategoriaList(ListView):
     model = models.BlogCategoria
 
@@ -24,6 +23,7 @@ class BlogCategoriaDetail(DetailView):
     model = models.BlogCategoria
 
 #import CreateView
+
 class BlogCategoriaCreate(CreateView):
     model = models.BlogCategoria
     form_class = forms.BlogCategoriaForm
@@ -54,15 +54,18 @@ class BlogList(ListView):
 class BlogDetail(DetailView):
     model = models.Blog
 
+
 class BlogCreate(CreateView):
     model = models.Blog
     form_class = forms.BlogForm
     success_url = reverse_lazy("blog:blog_list")
 
+
 class BlogUpdate(UpdateView):
     model = models.Blog
     form_class = forms.BlogForm
     success_url = reverse_lazy("blog:blog_list")
+
 
 class BlogDelete(DeleteView):
     model = models.Blog

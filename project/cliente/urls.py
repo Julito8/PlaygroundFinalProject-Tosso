@@ -10,6 +10,8 @@ urlpatterns = [
     path("", views.perfil, name="perfil"),
     path("crear_perfil/", views.crear_perfil, name="crear_perfil"),
     path("crear_usuario/", views.crear_usuario, name="crear_usuario"),
+    path("aboutme/", views.aboutme, name="aboutme"),
+    path("registro/", views.registro, name="registro"),
 
 ]
 

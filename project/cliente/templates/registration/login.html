@@ -1,0 +1,28 @@
+{% extends 'home/base.html' %}
+
+{% block title %}
+    <br>
+    <h1> Login </h1>
+    <br>
+{% endblock title %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-12 col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Ingresa tus credenciales</h2>
+                    <hr>
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn btn-success">Ingresar</button>
+                    </form>
+                    <br>
+                    <a href="{% url 'home:index' %}">Ir a inicio</a>
+                    <a href="{% url 'cliente:registro' %}">Registrarse</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
