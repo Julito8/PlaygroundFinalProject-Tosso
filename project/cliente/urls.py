@@ -12,6 +12,7 @@ urlpatterns = [
     path("crear_usuario/", views.crear_usuario, name="crear_usuario"),
     path("aboutme/", views.aboutme, name="aboutme"),
     path("registro/", views.registro, name="registro"),
+    path("tu_perfil/", views.tu_perfil, name="tu_perfil"),
 
 ]
 

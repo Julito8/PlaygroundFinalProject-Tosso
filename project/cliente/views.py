@@ -60,6 +60,12 @@ def registro(request):
     return render(request, "registration/registro.html", data)
 
 
+def tu_perfil(request):
+    perfiles = models.Perfil.objects.all()
+
+    return render(request, "cliente/tu_perfil.html", {"perfiles":perfiles})
+
+
 
 
 """ def crear_blog(request):
