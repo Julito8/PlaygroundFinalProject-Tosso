@@ -1,0 +1,15 @@
+{% extends 'Blog/base.html' %}
+
+{% block title %}
+    <h2><strong>{{ object_list.titulo}}</strong> </h2>
+{% endblock title %}
+
+{% block blog %}
+        
+        <br> 
+        {{object_list.contenido}}
+        <br>
+
+    <a href="{% url 'blog:blog_list' %}" class="btn btn-dark">Volver a atras</a>
+    <a href="{% url 'blog:blog_detail' object_list.id  %}"class="btn btn-light">Ver detalle</a>
+{% endblock blog %}

@@ -7,12 +7,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'home:index' %}">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'cliente:perfil' %}">Perfiles</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'blog:index' %}">Blogs</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'cliente:aboutme' %}">About me</a></li>
                         {% if user.is_authenticated %}
                             <li><a class="nav-link" href="{% url 'logout' %}">Cerrar sesión</a></li>
-                            <li><a class="nav-link" href="#">@{{ user.username }}</a></li>
+                            <li><a class="nav-link" href="{% url 'cliente:perfil_list' %}">@{{ user.username }}</a></li>
                         {% else %}
                             <li><a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a></li>
                             <li><a class="nav-link" href="{% url 'cliente:registro' %}">Registrarse</a></li>

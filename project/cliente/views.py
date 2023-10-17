@@ -8,6 +8,7 @@ from . import forms
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.views.generic import ListView
 
 def perfil(request):
     perfiles = models.Perfil.objects.all()
@@ -24,17 +25,6 @@ def crear_perfil(request):
     else:
         form = forms.PerfilForm()  #Formulario vacio
     return render(request, "cliente/crear_perfil.html", {"form":form})
-
-
-def crear_usuario(request):
-    if request.method == "POST":
-        form = forms.UsuarioForm(request.POST) #Formulario lleno    
-        if form.is_valid():
-            form.save()   # guarda los datos
-            return redirect("cliente:perfil")
-    else:
-        form = forms.UsuarioForm()  #Formulario vacio
-    return render(request, "cliente/crear_usuario.html", {"form":form})
 
 
 def aboutme(request):
@@ -60,20 +50,12 @@ def registro(request):
     return render(request, "registration/registro.html", data)
 
 
+def tu_perfil(request):
+    perfiles = models.Perfil.objects.all()
+
+    return render(request, "cliente/tu_perfil.html", {"perfiles":perfiles})
 
 
-""" def crear_blog(request):
-    if request.method == "POST":
-        form = forms.BlogForm(request.POST) #Formulario lleno    
-        if form.is_valid():
-            form.save()   # guarda los datos
-            return redirect("cliente:index")
-    else:
-        form = forms.BlogForm()  #Formulario vacio
-    return render(request, "cliente/crear_blog.html", {"form":form})
-
-def mostrar_blogs(request):
-    blogs = models.Blog.objects.all()
-
-    return render(request, "cliente/mostrar_blogs.html", {"blogs":blogs})
- """
+class PeriflList(ListView):
+    model = models.Perfil
+    template_name = "cliente/perfil_list.html"
