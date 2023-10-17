@@ -1,6 +1,7 @@
 from django.db import models
 from cliente.models import Perfil
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -22,7 +23,7 @@ class Blog(models.Model):
     titulo = models.CharField(max_length=100)
     descripcion_corta = models.CharField(max_length=200, null=True, blank=True, verbose_name="descripción corta")
     contenido = models.CharField(max_length=10000)
-    usuario_origen_id = models.ForeignKey(Perfil, on_delete=models.SET_NULL, null=True, blank=True, verbose_name="usuario")
+    usuario_origen_id = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, verbose_name="usuario")
     fecha_actualizacion = models.DateField(default=timezone.now, editable=False, verbose_name="fecha de actualización")
 
     class Meta:

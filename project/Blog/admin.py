@@ -21,4 +21,4 @@ class BlogAdmin(admin.ModelAdmin):
     search_fields = ("titulo",)
     ordering = ("categoria", "titulo")
     list_filter = ("categoria",)
-    date_hierarchy = "fecha_actualizacion"
+    date_hierarchy = ("fecha_actualizacion")
