@@ -12,6 +12,7 @@ urlpatterns = [
     path("aboutme/", views.aboutme, name="aboutme"),
     path("registro/", views.registro, name="registro"),
     path("tu_perfil/", views.tu_perfil, name="tu_perfil"),
+    path("perfil_list/", views.PeriflList.as_view(), name="perfil_list"),
 
 ]
 

@@ -8,6 +8,7 @@ from . import forms
 from django.contrib.auth import authenticate, login
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.views.generic import ListView
 
 def perfil(request):
     perfiles = models.Perfil.objects.all()
@@ -83,3 +84,7 @@ def mostrar_blogs(request):
 
     return render(request, "cliente/mostrar_blogs.html", {"blogs":blogs})
  """
+
+class PeriflList(ListView):
+    model = models.Perfil
+    template_name = "cliente/perfil_list.html"
