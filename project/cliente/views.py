@@ -26,7 +26,7 @@ def crear_perfil(request):
     return render(request, "cliente/crear_perfil.html", {"form":form})
 
 
-def crear_usuario(request):
+""" def crear_usuario(request):
     if request.method == "POST":
         form = forms.UsuarioForm(request.POST) #Formulario lleno    
         if form.is_valid():
@@ -34,7 +34,7 @@ def crear_usuario(request):
             return redirect("cliente:perfil")
     else:
         form = forms.UsuarioForm()  #Formulario vacio
-    return render(request, "cliente/crear_usuario.html", {"form":form})
+    return render(request, "cliente/crear_usuario.html", {"form":form}) """
 
 
 def aboutme(request):

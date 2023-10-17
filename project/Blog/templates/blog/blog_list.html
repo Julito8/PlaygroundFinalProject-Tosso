@@ -19,6 +19,7 @@
         <ul>
 
             <li> <strong class ="text-primary">{{ blog.titulo}}:</strong> {{blog.descripcion_corta}}</li>
+                <a href="{% url 'blog:leer_blog' blog.id %}"class="btn btn-success ">Leer</a>
                 <a href="{% url 'blog:blog_detail' blog.id %}"class="btn btn-light">Ver detalle</a>
                 <a href="{% url 'blog:blog_update' blog.id %}"class="btn btn-light">Actualizar</a>
                 <a href="{% url 'blog:blog_delete' blog.id %}"class="btn btn-danger ">Eliminar</a>

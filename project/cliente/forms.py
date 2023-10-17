@@ -5,12 +5,12 @@ from django.contrib.auth.forms import UserCreationForm
 class PerfilForm(forms.ModelForm):
     class Meta:
         model = models.Perfil
-        fields = ["nombre", "apellido", "nacimiento", "mail", "usuario", "biografia"]
+        fields = ["nombre", "apellido", "nacimiento", "mail", "biografia", "usuario"]
 
-class UsuarioForm(forms.ModelForm):
+""" class UsuarioForm(forms.ModelForm):
     class Meta:
         model = models.Usuario
-        fields = ["usuario"]
+        fields = ["usuario"] """
 
 
 """ class BlogForm(forms.ModelForm):

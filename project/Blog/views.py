@@ -70,3 +70,15 @@ class BlogUpdate(UpdateView):
 class BlogDelete(DeleteView):
     model = models.Blog
     success_url = reverse_lazy("blog:blog_list")
+
+
+
+from django.shortcuts import render
+from .models import Blog  # Asegúrate de importar tu modelo correspondiente
+
+def leer_blog(request, pk):
+    # Aquí, pk contiene el valor pasado en la URL
+    # Debes usar pk para recuperar el objeto del modelo apropiado
+    # y luego pasarlo al contexto en tu función render
+    blog = Blog.objects.get(pk=pk)  # Reemplaza "TuModelo" con el nombre de tu modelo
+    return render(request, "blog/leer_blog.html", {'object_list': blog})

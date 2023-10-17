@@ -6,7 +6,6 @@
 
 {% block content %}
 
-    <p><strong>Primero tenes que tener un usuario. Si no lo tenes creá el tuyo </strong> <a href="{% url 'cliente:crear_usuario' %}">aqui</a></p>
     <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}
