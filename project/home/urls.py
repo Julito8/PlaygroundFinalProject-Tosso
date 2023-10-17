@@ -16,5 +16,3 @@ urlpatterns = [
 ]
 
 urlpatterns += staticfiles_urlpatterns()
-
-"""     path("login/", views.loginrequest, name="login"), """
